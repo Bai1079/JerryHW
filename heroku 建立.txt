@@ -1,0 +1,37 @@
+
+
+heroku
+
+    install heroku
+    $ heroku login
+        Email
+        Password
+    $ git clone https://github.com/heroku/python-getting-started.git
+    $ cd python-getting-started
+    $ heroku create 建立一個APP 這裡的 [app_name] 指的是 heroku 上的 app
+    $ git push heroku master
+    $ heroku ps:scale web=1 將 web dynos 數量設為 1
+    $ heroku open 開啟你的 heroku app
+
+Add own apps to heroku
+
+    $ sudo pip install Django --upgrade
+    $ python manage.py migrate
+    $ python manage.py startapp <appname>
+    [move your app file to the app folder]
+    $ python manage.py makemigrations
+    $ python manage.py migrate
+    $ git add .
+    $ git commit -m '<commit>'
+    $ git push heroku master
+    $ heroku run python manage.py migrate
+    $ heroku run python manage.py createsuperuser
+        admin
+        P@ssword
+    $ heroku run python manage.py collectstatic
+    $ heroku open
+
+---------
+    git init 初始化這個目錄，讓 Git 對這個目錄開始進行版本控制
+    git commit -m "message" commit 並含訊息
+    git push
